@@ -1,6 +1,6 @@
-INSERT INTO USER VALUES(1,'testuser','$2a$10$UQoyqdQAR4HaigZqCGrNeONUE0A9QLk6KSUNR3S52Zh2zlbcrmt3W'); --qwerty
-INSERT INTO USER VALUES(2,'JohnDou','$2a$10$YzVKpgFaiAgu2bCBWZE6ju6saZ6czX2mOpok7kbwyiOT7kAbXulMK');  --qwerty
-INSERT INTO USER VALUES(3,'jon.snow', '$2a$10$7T3dK2UD1VbIAQAHWG585uGbsicB9EijTYieSmmIUUd8BpsnBPeN2'); -- qwerty
+INSERT INTO USER VALUES(1,'testuser','$2a$10$UQoyqdQAR4HaigZqCGrNeONUE0A9QLk6KSUNR3S52Zh2zlbcrmt3W', 'ADMIN'); --qwerty
+INSERT INTO USER VALUES(2,'JohnDou','$2a$10$YzVKpgFaiAgu2bCBWZE6ju6saZ6czX2mOpok7kbwyiOT7kAbXulMK', 'USER');  --qwerty
+INSERT INTO USER VALUES(3,'jon.snow', '$2a$10$7T3dK2UD1VbIAQAHWG585uGbsicB9EijTYieSmmIUUd8BpsnBPeN2', 'USER'); -- qwerty
 
 INSERT INTO DISK VALUES(1,'Форрест Гамп (1994)', 1);
 INSERT INTO DISK VALUES(2,'Knockin'' on Heaven''s Door ', 1);

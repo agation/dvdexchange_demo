@@ -53,4 +53,12 @@ public class UsersController {
         model.addAttribute("langCode", this.localeResolver.resolveLocale(request).getLanguage());
         return "signin";
     }
+
+    // todo list user for admin
+    // @RequestMapping("/user/list")
+    // public String allUsersPage(Model model) {
+    //     List<User> users = this.userService.getAllUsers();
+    //     model.addAttribute("users", users);
+    //     return "users";
+    // }
 }

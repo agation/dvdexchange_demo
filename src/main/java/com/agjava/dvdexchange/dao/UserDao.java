@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
+import java.util.List;
 
 @Slf4j
 @Repository
@@ -35,5 +36,11 @@ public class UserDao implements IUserDao {
             log.debug("Exception with select user by name: {};", name, exc);
         }
         return result;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<User> getAllUsers() {
+        return this.entityManager.createQuery("FROM User", User.class).getResultList();
     }
 }

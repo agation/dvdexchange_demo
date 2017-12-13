@@ -14,7 +14,6 @@ public class Disk {
     @NotNull()
     private String name;
 
-    // @JsonIgnore
     @ManyToOne
     @NotNull
     private User owner;

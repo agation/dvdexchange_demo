@@ -1,5 +1,6 @@
 package com.agjava.dvdexchange.model.entity;
 
+import com.agjava.dvdexchange.model.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
@@ -30,6 +31,9 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private Set<TakenItem> takenItems = new HashSet<>();
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public User() {
     }
@@ -69,5 +73,13 @@ public class User {
 
     public Set<TakenItem> getTakenItems() {
         return takenItems;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 }

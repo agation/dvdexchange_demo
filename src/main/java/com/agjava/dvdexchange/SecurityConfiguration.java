@@ -1,5 +1,6 @@
 package com.agjava.dvdexchange;
 
+import com.agjava.dvdexchange.model.Role;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,6 +20,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/css/**", "/js/**", "fonts/**", "/signup", "/signin")
                 .permitAll()
+                .antMatchers("/user/list**").hasRole(Role.ADMIN.name())
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/signin").usernameParameter("name")
@@ -26,8 +28,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().logoutUrl("/logout")
                 .permitAll()
-                .and().csrf().disable()
-        ;
-
+                .and()
+                .csrf().disable();
     }
 }
